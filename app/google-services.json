@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "972307390929",
+    "project_id": "booktickets-9f9d8",
+    "storage_bucket": "booktickets-9f9d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972307390929:android:9852b1122029eaba8c00f0",
+        "android_client_info": {
+          "package_name": "com.example.booktickets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972307390929-0gro3qldshoe73ojuv2n8qfo9a6udv34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn9SyrvyVxPUqiMNt6TdVC6vb1p3igYkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972307390929-0gro3qldshoe73ojuv2n8qfo9a6udv34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
