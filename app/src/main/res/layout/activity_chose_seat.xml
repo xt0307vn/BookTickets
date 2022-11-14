@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_toRightOf="@id/chose_seat_btnback"
-                android:text="Chiến binh báo đen Người nhên bla bla"
+                android:text="Chiến binh báo đen"
                 android:textColor="#000"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -70,7 +70,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chose_seat_seat"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
 
 
         </androidx.recyclerview.widget.RecyclerView>
@@ -83,10 +84,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="Chú thích"
                 android:layout_gravity="center_horizontal"
-                android:textSize="20sp"
-                android:textColor="#000"/>
+                android:textSize="20sp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chưa bán"
                         android:textSize="20sp"
-                        android:textColor="#f00"/>
+                        android:textColor="#00E3D7"/>
 
                 </LinearLayout>
 
@@ -148,7 +149,7 @@
                         android:layout_height="wrap_content"
                         android:text="Đang chọn"
                         android:textSize="20sp"
-                        android:textColor="#f00"/>
+                        android:textColor="#5EFF69"/>
 
                 </LinearLayout>
 
@@ -176,24 +177,26 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/chose_seat_countseat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2 "
+                    android:text="0"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:textColor="#000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ghế: "
+                    android:text=" ghế: "
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:textColor="#000"/>
 
                 <TextView
+                    android:id="@+id/chose_seat_seatbook"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="A1, A2"
+                    android:text=""
                     android:textSize="20sp"
                     android:textColor="#000"/>
 
@@ -213,9 +216,10 @@
                     android:textColor="#000"/>
 
                 <TextView
+                    android:id="@+id/chose_seat_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200 000"
+                    android:text="0000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#FF925E"/>
@@ -235,17 +239,26 @@
 
         </LinearLayout>
 
-        <Button
-            android:layout_weight="3"
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đặt ghế"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#4E4E4E"
-            android:textAllCaps="false"
-            android:layout_gravity="center_vertical"
-            android:background="#0f0"/>
+            app:cardCornerRadius="8dp">
+
+            <Button
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đặt ghế"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#4E4E4E"
+                android:textAllCaps="false"
+                android:layout_gravity="center_vertical"
+                android:background="#0f0"/>
+
+        </androidx.cardview.widget.CardView>
+
+
 
 
     </LinearLayout>

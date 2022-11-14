@@ -3,14 +3,24 @@ package com.example.booktickets;
 import java.util.List;
 
 public class Movie {
-    String movieName, movieKind, movieUrlImage, movieTimes;
+    String movieName, movieKind, movieUrlImage, movieTime, movieID;
     List<String> movieTimeStart;
 
-    public Movie(String movieName, String movieKind, String movieUrlImage,String movieTimes) {
+
+    public Movie() {
+
+    }
+
+    public Movie(String movieID) {
+        this.movieID = movieID;
+    }
+
+    public Movie(String movieName, String movieKind, String movieUrlImage, String movieTime, List<String> movieTimeStart) {
         this.movieName = movieName;
         this.movieKind = movieKind;
         this.movieUrlImage = movieUrlImage;
-        this.movieTimes = movieTimes;
+        this.movieTime = movieTime;
+        this.movieTimeStart = movieTimeStart;
     }
 
     public String getMovieName() {
@@ -37,12 +47,27 @@ public class Movie {
         this.movieUrlImage = movieUrlImage;
     }
 
-    public String getMovieTimes() {
-        return movieTimes;
+    public String getMovieTime() {
+        return movieTime;
     }
 
-    public void setMovieTimes(String movieTimes) {
-        this.movieTimes = movieTimes;
+    public void setMovieTime(String movieTime) {
+        this.movieTime = movieTime;
     }
 
+    public List<String> getMovieTimeStart() {
+        return movieTimeStart;
+    }
+
+    public void setMovieTimeStart(List<String> movieTimeStart) {
+        this.movieTimeStart = movieTimeStart;
+    }
+
+    public String getMovieID() {
+        return movieID;
+    }
+
+    public void setMovieID(String movieID) {
+        this.movieID = movieID;
+    }
 }
