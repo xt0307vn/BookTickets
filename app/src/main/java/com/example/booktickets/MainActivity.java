@@ -16,7 +16,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    Button main_logout;
     FirebaseAuth auth;
     MoviesFragment moviesFragment;
     ProfileFragment profileFragment;
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        main_logout = findViewById(R.id.main_logout);
         auth = FirebaseAuth.getInstance();
         moviesFragment = new MoviesFragment();
         profileFragment = new ProfileFragment();
@@ -50,16 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-        main_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                auth.signOut();
-                startActivity(new Intent(MainActivity.this, RegisterPhoneActivity.class));
-                finish();
-            }
-        });
-
 
 
     }
