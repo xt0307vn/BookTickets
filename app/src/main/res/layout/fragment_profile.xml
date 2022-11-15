@@ -1,10 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment"
-    android:background="#f00">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:contentDescription="@string/app_name"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#5CC09F">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_hinhprofile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/no_profile_pic" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#B7CDDC"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/no_profile_pic"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/txtnameprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="full name"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#B7CDDC"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_email"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/txtemailprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="email"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#B7CDDC"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_phone"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/txtphoneprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="phone"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
 
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#B7CDDC"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_home"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/txtdiachiprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dia chi"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:id="@+id/btnupdateprofile"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="130dp"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:textSize="20sp"/>
+
+</LinearLayout>
