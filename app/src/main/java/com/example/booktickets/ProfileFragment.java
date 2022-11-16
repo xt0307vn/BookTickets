@@ -1,5 +1,6 @@
 package com.example.booktickets;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,11 +33,56 @@ public class ProfileFragment extends Fragment {
         TextView txtphone = (TextView) view.findViewById(R.id.txtphoneprofile);
         TextView txtemail = (TextView) view.findViewById(R.id.txtemailprofile);
         TextView txtdiachi = (TextView) view.findViewById(R.id.txtdiachiprofile);
-
-        databaseReference.child("users").addValueEventListener(new ValueEventListener() {
+        Button btnupdate = (Button) view.findViewById(R.id.btnupdateprofile);
+        btnupdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(),updata_profile.class));
+            }
+        });
+        databaseReference.child("users/0899885260/fulname").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String fullname = snapshot.getValue(String.class);
+                txtfullname.setText(fullname);
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        databaseReference.child("users/0899885260/email").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String email = snapshot.getValue(String.class);
+                txtemail.setText(email);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        databaseReference.child("users/0899885260/diachi").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String diachi = snapshot.getValue(String.class);
+                txtdiachi.setText(diachi);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        databaseReference.child("users/0899885260/phone").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String phone = snapshot.getValue(String.class);
+                txtphone.setText(phone);
             }
 
             @Override
