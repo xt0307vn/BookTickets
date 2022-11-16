@@ -25,13 +25,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Phòng 3"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:textColor="#474747"/>
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phòng: "
+                        android:textSize="25sp"
+                        android:textColor="#F44336"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/timestart_room"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="#F44336"/>
+
+                </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -46,7 +63,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/idaaaa"
+                        android:id="@+id/timestart_start"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="09:00"
@@ -56,27 +73,27 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Thời gian kết thúc: "
-                        android:textSize="18sp"
-                        android:textColor="#D8B482"
-                        android:textStyle="bold"/>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Thời gian kết thúc: "-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#D8B482"-->
+<!--                        android:textStyle="bold"/>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="10:00"
-                        android:textSize="18sp"
-                        android:textColor="#D8B482"
-                        android:textStyle="bold"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="10:00"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#D8B482"-->
+<!--                        android:textStyle="bold"/>-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
             </LinearLayout>
 
@@ -89,7 +106,7 @@
                     android:layout_height="match_parent"
                     app:cardCornerRadius="8dp">
                     <Button
-                        android:id="@+id/item_timestartchose"
+                        android:id="@+id/timestart_choose"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Chọn"

@@ -24,10 +24,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#b300b3"
-        app:menu="@menu/navigation_menu"
+        android:background="#00bcd4"
         app:itemIconTint="#fff"
-        app:itemTextColor="#fff">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:itemTextColor="#fff"
+        app:menu="@menu/navigation_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>

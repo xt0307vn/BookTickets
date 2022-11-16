@@ -1,13 +1,11 @@
 package com.example.booktickets;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,17 +14,17 @@ import java.util.List;
 
 public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.SeatViewHolder> {
     List<Seat> seatList;
-    ChoseSeatActivity choseSeatActivity;
+    ChooseSeatActivity chooseSeatActivity;
 
-    public SeatAdapter(List<Seat> seatList, ChoseSeatActivity choseSeatActivity) {
+    public SeatAdapter(List<Seat> seatList, ChooseSeatActivity chooseSeatActivity) {
         this.seatList = seatList;
-        this.choseSeatActivity = choseSeatActivity;
+        this.chooseSeatActivity = chooseSeatActivity;
     }
 
     @NonNull
     @Override
     public SeatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(choseSeatActivity).inflate(R.layout.item_seat, parent, false);
+        View view = LayoutInflater.from(chooseSeatActivity).inflate(R.layout.item_seat, parent, false);
 
         return new SeatViewHolder(view);
     }
@@ -41,23 +39,25 @@ public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.SeatViewHolder
         if(seat.getSeat_position() == 1) {
             holder.item_seat_seat_position.setEnabled(false);
             holder.item_seat_seat_position.setButtonDrawable(R.drawable.seat_red);
+        } else {
+            holder.item_seat_seat_position.setEnabled(true);
         }
 
         holder.item_seat_seat_position.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b == true) {
-                    choseSeatActivity.choseSeat.add(seat.getSeat_txt());
-                    choseSeatActivity.chose_seat_seatbook.setText(choseSeatActivity.choseSeat.toString());
-                    choseSeatActivity.chose_seat_countseat.setText(choseSeatActivity.choseSeat.size() + "");
-                    choseSeatActivity.chose_seat_amount.setText(choseSeatActivity.choseSeat.size()*55000 + "");
+                    chooseSeatActivity.choseSeat.add(seat.getSeat_txt());
+                    chooseSeatActivity.chose_seat_seatbook.setText(chooseSeatActivity.choseSeat.toString());
+                    chooseSeatActivity.chose_seat_countseat.setText(chooseSeatActivity.choseSeat.size() + "");
+                    chooseSeatActivity.chose_seat_amount.setText(chooseSeatActivity.choseSeat.size()*55000 + "");
                 } else {
-                    for(int index = 0; index <= choseSeatActivity.choseSeat.size(); index++) {
-                        if(choseSeatActivity.choseSeat.get(index).equalsIgnoreCase(seat.getSeat_txt())) {
-                            choseSeatActivity.choseSeat.remove(index);
-                            choseSeatActivity.chose_seat_seatbook.setText(choseSeatActivity.choseSeat.toString());
-                            choseSeatActivity.chose_seat_countseat.setText(choseSeatActivity.choseSeat.size() + "");
-                            choseSeatActivity.chose_seat_amount.setText(choseSeatActivity.choseSeat.size()*55000 + "");
+                    for(int index = 0; index <= chooseSeatActivity.choseSeat.size(); index++) {
+                        if(chooseSeatActivity.choseSeat.get(index).equalsIgnoreCase(seat.getSeat_txt())) {
+                            chooseSeatActivity.choseSeat.remove(index);
+                            chooseSeatActivity.chose_seat_seatbook.setText(chooseSeatActivity.choseSeat.toString());
+                            chooseSeatActivity.chose_seat_countseat.setText(chooseSeatActivity.choseSeat.size() + "");
+                            chooseSeatActivity.chose_seat_amount.setText(chooseSeatActivity.choseSeat.size()*55000 + "");
                         }
                     }
                 }

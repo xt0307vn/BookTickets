@@ -72,6 +72,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/custom_borderedt"
             android:hint="Nhập mật khẩu"
+            android:inputType="textPassword"
             android:padding="15dp"
             android:textColor="#FC3369"
             android:textColorHint="#51505D"

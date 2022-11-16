@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     ProfileFragment profileFragment;
     HomeFragment homeFragment;
     BottomNavigationView bottomNavigationView;
+
+    String userID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
         profileFragment = new ProfileFragment();
         homeFragment = new HomeFragment();
         bottomNavigationView = findViewById(R.id.main_navigation_menu);
+
+        Intent intent = getIntent();
+
+        userID = intent.getStringExtra("userID");
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.main_container, moviesFragment).commit();
 
@@ -52,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
+    public String getUserID() {
+        return userID;
+    }
 }

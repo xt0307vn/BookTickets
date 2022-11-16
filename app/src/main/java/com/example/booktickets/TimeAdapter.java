@@ -1,9 +1,11 @@
 package com.example.booktickets;
 
-import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,17 +15,17 @@ import java.util.List;
 
 public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.TimeViewHolder> {
     List<TimeStart> list;
-    Context context;
+    ChooseTimeActivity chooseTimeActivity;
 
-    public TimeAdapter(List<TimeStart> list, Context context) {
+    public TimeAdapter(List<TimeStart> list, ChooseTimeActivity chooseTimeActivity) {
         this.list = list;
-        this.context = context;
+        this.chooseTimeActivity = chooseTimeActivity;
     }
 
     @NonNull
     @Override
     public TimeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_timestart, parent, false);
+        View view = LayoutInflater.from(chooseTimeActivity).inflate(R.layout.item_timestart, parent, false);
         return new TimeViewHolder(view);
     }
 
@@ -34,7 +36,24 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.TimeViewHolder
             return;
         }
 
-        holder.item_time.setText(t.getTime());
+        holder.timestart_start.setText(t.getTime());
+        holder.timestart_room.setText(t.getRoom());
+
+        holder.timestart_choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(chooseTimeActivity, ChooseSeatActivity.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("timestart",t.getTime());
+                bundle.putString("room",t.getRoom());
+                bundle.putString("movieID",chooseTimeActivity.movieID);
+
+                intent.putExtra("data", bundle);
+                chooseTimeActivity.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -46,10 +65,13 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.TimeViewHolder
     }
 
     public class TimeViewHolder extends RecyclerView.ViewHolder {
-        TextView item_time;
+        TextView timestart_start, timestart_room;
+        Button timestart_choose;
         public TimeViewHolder(@NonNull View itemView) {
             super(itemView);
-            item_time = itemView.findViewById(R.id.idaaaa);
+            timestart_start = itemView.findViewById(R.id.timestart_start);
+            timestart_room = itemView.findViewById(R.id.timestart_room);
+            timestart_choose = itemView.findViewById(R.id.timestart_choose);
         }
     }
 }

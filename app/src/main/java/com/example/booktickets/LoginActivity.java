@@ -28,6 +28,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class LoginActivity extends AppCompatActivity {
@@ -86,9 +87,15 @@ public class LoginActivity extends AppCompatActivity {
                                                         @Override
                                                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                                             if(task.isSuccessful()) {
+
                                                                 if(task.getResult().size() != 0) {
+                                                                    String userID = "";
                                                                     Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                                                                    gotoMain();
+
+                                                                    for(QueryDocumentSnapshot snapshot: task.getResult()) {
+                                                                        userID = snapshot.getId();
+                                                                    }
+                                                                    gotoMain(userID);
                                                                 } else {
                                                                     Toast.makeText(LoginActivity.this, "Mật khẩu sai", Toast.LENGTH_SHORT).show();
                                                                 }
@@ -125,7 +132,9 @@ public class LoginActivity extends AppCompatActivity {
         return phone;
     }
 
-    private void gotoMain() {
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+    private void gotoMain(String userID) {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.putExtra("userID", userID);
+        startActivity(intent);
     }
 }
