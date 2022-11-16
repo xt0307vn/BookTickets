@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MoviesFragment"
-    android:background="#0ff">
+    android:background="#6E6157">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/frag_moviesRecycleview"

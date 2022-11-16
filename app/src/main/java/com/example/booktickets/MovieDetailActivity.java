@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     TextView movie_detail_movieName;
     ImageView movie_detail_movieImage;
     Button movie_detail_seatBook;
+    ImageButton movie_detail_btnback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,13 +54,20 @@ public class MovieDetailActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "no", Toast.LENGTH_SHORT).show();
         }
-
+        movie_detail_btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MovieDetailActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void initID() {
         movie_detail_movieName = findViewById(R.id.movie_detail_movieName);
         movie_detail_movieImage = findViewById(R.id.movie_detail_movieImage);
         movie_detail_seatBook = findViewById(R.id.movie_detail_seatBook);
+        movie_detail_btnback = findViewById(R.id.chose_seat_btnback);
     }
 
 }
