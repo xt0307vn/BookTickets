@@ -57,8 +57,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         movie_detail_btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MovieDetailActivity.this,MainActivity.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
     }

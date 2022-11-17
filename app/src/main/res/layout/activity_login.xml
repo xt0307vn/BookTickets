@@ -4,59 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/infinitywar"
     tools:context=".LoginActivity">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/infinitywar"
-        android:scaleType="fitXY"/>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/shadoweffect"/>
-
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/heading"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        android:orientation="vertical">-->
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Cinema"-->
+    <!--            android:textSize="50sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:textColor="#fff"/>-->
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Android-1"-->
+    <!--            android:textSize="50sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:textColor="#B19595"/>-->
+    <!--    </LinearLayout>-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/login_bottom"
-        android:orientation="vertical"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cinema"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:textColor="#fff"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Android-1"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:textColor="#FC3369"/>
-
-    </LinearLayout>
-
-    <LinearLayout
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="30dp"
+        android:windowSoftInputMode="adjustResize"
         android:id="@+id/login_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@drawable/custom_backgroundinput"
         android:orientation="vertical"
         android:padding="15dp">
-
         <EditText
-
             android:id="@+id/login_userPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/custom_borderedt"
             android:hint="Nhập số điện thoại"
             android:inputType="number"
@@ -64,7 +52,6 @@
             android:textColor="#FC3369"
             android:textColorHint="#51505D"
             android:textStyle="bold" />
-
         <EditText
             android:id="@+id/login_userPassword"
             android:layout_width="match_parent"
@@ -76,7 +63,6 @@
             android:textColor="#FC3369"
             android:textColorHint="#51505D"
             android:textStyle="bold" />
-
         <Button
             android:id="@+id/login_btnLogin"
             android:layout_width="match_parent"
@@ -87,7 +73,6 @@
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,27 +80,21 @@
             android:orientation="horizontal"
             android:paddingTop="20dp"
             android:paddingBottom="20dp">
-
             <TextView
+                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Don't have an account?"
                 android:textColor="#828095" />
-
             <TextView
                 android:id="@+id/login_gotoRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="18dp"
                 android:layout_marginLeft="5dp"
                 android:text="Register now"
                 android:textColor="#FF3366"
                 android:textStyle="bold" />
-
-
         </LinearLayout>
-
     </LinearLayout>
-
-
-
 </RelativeLayout>
